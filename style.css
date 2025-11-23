@@ -1,0 +1,215 @@
+/* Variáveis CSS globais no seletor :root */
+:root {
+    /* Cores */
+    --cor-primaria: #2c3e50;
+    --cor-secundaria: #3498db;
+    --cor-texto: #333;
+    --cor-fundo: #ecf0f1;
+    --cor-borda: #bdc3c7;
+
+    /* Tamanhos de fonte para telas grandes (default - desktop) */
+    --fonte-h1: 2.5rem;
+    --fonte-h2: 2rem;
+    --fonte-h3: 1.5rem;
+    --fonte-texto: 1.125rem;
+    --fonte-pequena: 0.875rem;
+
+    /* Espaçamentos para telas grandes */
+    --espacamento-grande: 3rem;
+    --espacamento-medio: 2rem;
+    --espacamento-pequeno: 1rem;
+    --espacamento-minimo: 0.5rem;
+
+    /* Outras variáveis */
+    --borda-raio: 8px;
+    --sombra: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset e estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+    padding: var(--espacamento-pequeno);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: var(--borda-raio);
+    box-shadow: var(--sombra);
+    overflow: hidden;
+}
+
+/* Aplicação das variáveis nos elementos */
+.cabecalho {
+    background: var(--cor-primaria);
+    color: white;
+    padding: var(--espacamento-grande);
+    text-align: center;
+}
+
+.cabecalho h1 {
+    font-size: var(--fonte-h1);
+    margin-bottom: var(--espacamento-pequeno);
+}
+
+.cabecalho p {
+    font-size: var(--fonte-texto);
+    opacity: 0.9;
+}
+
+.conteudo {
+    padding: var(--espacamento-grande);
+}
+
+.secao {
+    margin-bottom: var(--espacamento-medio);
+    padding: var(--espacamento-medio);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--borda-raio);
+}
+
+.secao h2 {
+    font-size: var(--fonte-h2);
+    color: var(--cor-primaria);
+    margin-bottom: var(--espacamento-pequeno);
+}
+
+.secao h3 {
+    font-size: var(--fonte-h3);
+    color: var(--cor-secundaria);
+    margin-bottom: var(--espacamento-minimo);
+}
+
+.secao p {
+    font-size: var(--fonte-texto);
+    margin-bottom: var(--espacamento-pequeno);
+}
+
+.card {
+    background: var(--cor-fundo);
+    padding: var(--espacamento-medio);
+    border-radius: var(--borda-raio);
+    margin-top: var(--espacamento-pequeno);
+}
+
+.lista {
+    list-style: none;
+    padding-left: var(--espacamento-pequeno);
+}
+
+.lista li {
+    padding: var(--espacamento-minimo) 0;
+    font-size: var(--fonte-texto);
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.lista li:last-child {
+    border-bottom: none;
+}
+
+.botao {
+    background: var(--cor-secundaria);
+    color: white;
+    border: none;
+    padding: var(--espacamento-minimo) var(--espacamento-pequeno);
+    border-radius: var(--borda-raio);
+    font-size: var(--fonte-texto);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.botao:hover {
+    background: #2980b9;
+}
+
+.rodape {
+    background: var(--cor-primaria);
+    color: white;
+    text-align: center;
+    padding: var(--espacamento-medio);
+    font-size: var(--fonte-pequena);
+}
+
+/* Media Queries para modificar as variáveis */
+
+/* Tablets (telas médias) */
+@media (max-width: 768px) {
+    :root {
+        /* Ajustes de fonte para tablets */
+        --fonte-h1: 2rem;
+        --fonte-h2: 1.75rem;
+        --fonte-h3: 1.25rem;
+        --fonte-texto: 1rem;
+
+        /* Ajustes de espaçamento para tablets */
+        --espacamento-grande: 2rem;
+        --espacamento-medio: 1.5rem;
+        --espacamento-pequeno: 0.75rem;
+        --espacamento-minimo: 0.375rem;
+    }
+
+    .conteudo {
+        padding: var(--espacamento-medio);
+    }
+
+    .secao {
+        padding: var(--espacamento-pequeno);
+    }
+}
+
+/* Smartphones (telas pequenas) */
+@media (max-width: 480px) {
+    :root {
+        /* Ajustes de fonte para mobile */
+        --fonte-h1: 1.75rem;
+        --fonte-h2: 1.5rem;
+        --fonte-h3: 1.125rem;
+        --fonte-texto: 0.9rem;
+        --fonte-pequena: 0.8rem;
+
+        /* Ajustes de espaçamento para mobile */
+        --espacamento-grande: 1.5rem;
+        --espacamento-medio: 1rem;
+        --espacamento-pequeno: 0.5rem;
+        --espacamento-minimo: 0.25rem;
+
+        /* Ajustes adicionais para mobile */
+        --borda-raio: 4px;
+    }
+
+    body {
+        padding: var(--espacamento-minimo);
+    }
+
+    .cabecalho,
+    .conteudo {
+        padding: var(--espacamento-pequeno);
+    }
+
+    .secao {
+        margin-bottom: var(--espacamento-pequeno);
+    }
+}
+
+/* Telas muito grandes */
+@media (min-width: 1200px) {
+    :root {
+        /* Ajustes para telas grandes */
+        --fonte-h1: 3rem;
+        --fonte-h2: 2.25rem;
+        --fonte-texto: 1.25rem;
+        
+        --espacamento-grande: 4rem;
+        --espacamento-medio: 2.5rem;
+    }
+}
